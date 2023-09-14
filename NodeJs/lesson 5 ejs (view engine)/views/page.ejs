@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("./partials/head.ejs") %>
+
+
+    <body>
+        <%- include("./partials/nav.ejs") %>
+            <h1 style="color: red;">Home page</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem ad pariatur
+                soluta repudiandae possimus inventore eaque, animi maiores eius. Enim,
+                ratione illum quasi recusandae libero et nostrum sunt voluptatum nobis
+                assumenda repellendus quidem eveniet dolorem voluptatem facilis, aperiam
+                rerum nam, veniam hic. Tempora quos nobis dolorem deleniti, ad fuga
+                tenetur!
+            </p>
+            <div>
+                <h2>All blogs</h2>
+                <div>
+                    <% if(blogs.length>0){
+                        blogs.forEach(blog => {
+
+                        %>
+                        <h3>
+                            <%= blog.title %>
+                        </h3>
+                        <p>
+                            <%= blog.snippet %>
+                        </p>
+                        <% });} %>
+                </div>
+            </div>
+            <%- include("./partials/footer.ejs") %>
+
+    </body>
+
+</html>
