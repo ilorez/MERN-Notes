@@ -1,0 +1,37 @@
+# Dependency directories
+node_modules/
+
+# Logs and debugging files
+logs/
+*.log
+npm-debug.log*
+
+# Environment configuration
+.env
+
+# OS or editor temporary files
+.DS_Store
+Thumbs.db
+
+# Compiled binary addons (node-gyp)
+build/
+
+# IDE-specific files
+.idea/
+.vscode/
+
+# macOS Finder files
+._*
+
+# Windows folder config file
+Desktop.ini
+
+# Yarn Integrity file
+.yarn-integrity
+
+# Lock files
+package-lock.json
+yarn.lock
+
+# Exclude files starting with "test"
+test*
