@@ -196,8 +196,53 @@ console.log(names.match(/\d\w{8}(?!Z)/gi));
 let txt = "We Love Programming And @ Because @ Is Amazing";
 console.log(txt.replace("@", "JavaScript"));
 console.log(txt.replaceAll("@", "JavaScript"));
-let re = /@/ig;
+let re = /@/gi;
 console.log(txt.replaceAll(re, "JavaScript"));
-console.log(txt.replaceAll(/@/ig, "JavaScript"));
+console.log(txt.replaceAll(/@/gi, "JavaScript"));
 ```
 
+### Part 6
+
+#### Form Validation
+
+- Input Form Validation Practice
+
+```html
+<form id="register" action="" method="get">
+  <input type="text" id="phone" name="the-phone" maxlength="15" />
+  <input type="submit" value="Register" />
+</form>
+```
+
+```js
+document.getElementById("register").onsubmit = function () {
+  let phoneInput = document.getElementById("phone").value;
+  let phoneRe = /\(\d{4}\)\s\d{3}-\d{4}/; // (1234) 567-8910
+  let validationResult = phoneRe.test(phoneInput);
+  if (validationResult === false) {
+    return false;
+  }
+  return true;
+};
+```
+
+### Part 7
+
+#### partique
+
+- Create RegExp that match all the urls
+
+```js
+let url1 = "elzero.org";
+let url2 = "http://elzero.org";
+let url3 = "https://elzero.org";
+let url4 = "https://www.elzero.org";
+let url5 = "https://www.elzero.org:8080/articles.php?id=100&cat=topics";
+
+let re = /code here/;
+console.log(url1.match(re));
+console.log(url2.match(re));
+console.log(url3.match(re));
+console.log(url4.match(re));
+console.log(url5.match(re));
+```

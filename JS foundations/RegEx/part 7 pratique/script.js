@@ -1,0 +1,19 @@
+let url1 = 'elzero.org';
+let url2 = 'http://elzero.org';
+let url3 = 'https://elzero.org';
+let url4 = 'https://www.elzero.org';
+let url5 = 'https://www.elzero.org:8080/articles.php?id=100&cat=topics';
+
+let re = /(https?:\/\/)?(www\.)?[a-z]*\.org(:[0-9]{4})?(\/[a-zA-z]*\.php)?\??(([a-z]*\=[a-zA-Z0-9]{0,}\&?){1,})?/;
+
+console.log(url1.match(re));
+console.log(url2.match(re));
+console.log(url3.match(re));
+console.log(url4.match(re));
+console.log(url5.match(re));
+
+console.log(re.test(url1));
+console.log(re.test(url2));
+console.log(re.test(url3));
+console.log(re.test(url4));
+console.log(re.test(url5));
