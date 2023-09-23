@@ -142,10 +142,15 @@ console.log(adminOne.sayHello()); // Hello Mahmoud
 ## Encapsulation
 
 - Class Fields Are Public By Default
+
 - Guards The Data Against Illegal Access.
+
 - Helps To Achieve The Target Without Revealing Its Complex Details.
+
 - Will Reduce Human Errors.
+
 - Make The App More Flexible And Manageable.
+
 - Simplifies The App.
 
 -> ther is some notes in Part 4/script.js file
@@ -158,3 +163,117 @@ class ClassName {
   }
 }
 ```
+
+## Part 5 - Prototype
+
+- Introduction
+
+  - Prototypes are the mechanism by which JavaScript objects inherit features from one another.
+
+    -> Don't make things harder for yourself; it's simple and easy. The prototype is just a style of an object generated automatically with any class. It acts as a template for objects created from this class, containing properties and methods that these objects can utilize.
+
+    Note you can see it by print it into console:
+
+```js
+console.log(String.prototype);
+```
+
+it's will look like this `String {'', constructor: ƒ, anchor: ƒ, at: ƒ, big: ƒ, …}`
+click on it in the console to show more details
+
+Advice: for understand what is prototype exactly and how it's look like create you own class and console.log(YourClassName.prototype)
+
+- Add To Prototype Chain & Extend Built In Constructors Features
+
+  -> we can also add to old classes that we created or not a new properties and functions by for example:
+
+```js
+Object.prototype.sayHello = "Hello world";
+String.prototype.myNewFunction = () => {
+  return "this functions apply something in your stirng!";
+};
+```
+
+we can now access to sayHello prop from any obj String or Number ... because this objs inheritance from Object objet.
+
+but we can't access to myNewFunction from Number object because it's deosn't inheritance from String.
+
+if we want to accesss to myNewFUnction we need to use a String obje:
+
+```js
+console.log("my srring".myNewFunction()); // output: "this functions apply something in your stirng!"
+```
+
+## Part 6 - Object Meta Data And Descriptor
+
+### Part A
+
+- writable
+
+- enumerable
+
+- configurable
+
+```js
+const myObject = {
+  a: 1,
+  b: 2,
+};
+
+Object.defineProperty(myObject, "c", {
+  writable: true,
+  enumerable: true,
+  configurable: true,
+  value: 3,
+});
+```
+
+writable: premesion write on it
+
+enumerable: premesion to use this prop into a loop
+
+configurable: premesion to delete or redefine it
+
+Note: take a look to Part 6/Part A/script.js for more details
+
+### Part B
+
+- Define Multiple Properties
+
+```js
+const myObject = {
+  a: 1,
+  b: 2,
+};
+
+Object.defineProperties(myObject, {
+  c: {
+    configurable: true,
+    value: 3,
+  },
+  d: {
+    configurable: true,
+    value: 4,
+  },
+  e: {
+    configurable: true,
+    value: 5,
+  },
+});
+```
+
+- Check Descriptors
+
+  -> for one prop
+
+  ```js
+  console.log(Object.getOwnPropertyDescriptor(myObject, "d"));
+  ```
+
+  -> multi props
+
+  ```js
+  console.log(Object.getOwnPropertyDescriptors(myObject));
+  ```
+
+Happy Coding!

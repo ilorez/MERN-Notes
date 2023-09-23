@@ -38,3 +38,13 @@ console.log("###")
 // console.log(userAdmin.getAdminSalary()) //----------- SyntaxError: Private field '#e' must be declared in an enclosing class
 console.log(userAdmin.getSalary()) // 5001
 
+
+
+
+
+
+
+
+
+
+
