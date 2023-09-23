@@ -15,7 +15,7 @@ let userOne = new User(100, "Elzero", 5000);
 console.log(userOne.u);
 userOne.updateName("Osama");
 console.log(userOne.u);
-/// Stirng
+
 let strOne = "Elzero";
 let strTwo = new String("Elzero");
 
@@ -27,16 +27,3 @@ console.log(strTwo instanceof String);
 
 console.log(strOne.constructor === String);
 console.log(strTwo.constructor === String);
-
-/// Number
-
-let numOne = 5;
-let numTwo = new Number(2);
-
-
-console.log(typeof numOne);
-console.log(typeof numTwo);
-
-console.log(numOne instanceof Number)
-
-console.log(numOne.constructor === Number)
