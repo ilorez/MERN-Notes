@@ -71,3 +71,42 @@ setInterval(() => {
   console.log(parseInt(day / 1000) % 60); // output: 54
 }, 1000);
 ```
+
+## Part 3
+
+#### set time using date methods
+
+- setTime(Milliseconds)
+- setDate() => Day Of The Month [Negative And Positive]
+- setFullYear(year, month => Optional [0-11], day => Optional [1-31])
+- setMonth(Month [0-11], Day => Optional [1-31]) [Negative And Positive]
+- setHours(Hours [0-23], Minutes => Optional [0-59], Seconds => Optional [0-59], MS => Optional [0-999])
+- setMinutes(Minutes [0-59], Seconds => Optional [0-59], MS => Optional [0-999])
+- setSeconds(Seconds => [0-59], MS => Optional [0-999])
+
+--> `setTime()` take time with milliseconds and covert it to full day from 1970.
+
+```js
+const time = new date();
+time.setTime(10000); // time => 1970-01-01T00:00:10.000Z
+```
+
+#### Note: If you find that hours it's not 0 that because your time zone(+/-) (1-12) hour according to space between you and Greenwich Mean Time (GMT)
+
+--> `setDate()` take day number between 1-(28/30/31)
+
+```js
+time.getDate(30); // time => 1970-01-30T00:00:10.000Z
+```
+
+=? negative and positive: what will happen if use (number > or < month days)
+
+```js
+time.getDate(35); // time => 1970-02-04T00:00:10.000Z
+```
+
+```js
+time.getDate(-2); // time => 1969-12-29T00:00:10.000Z
+```
+
+--> for other methods `setFullYear()`, `setMonth()`... and others it's accept same roles.
