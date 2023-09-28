@@ -37,6 +37,8 @@ Search For
 
 ## Part 2 - Get Date And Time Methods
 
+#### get date using date methods
+
     - getTime() => Number Of Milliseconds
 
     - getDate() => Day Of The Month
@@ -60,6 +62,7 @@ const seconds = dateNow.getSeconds(); // output : (number between 0 and 59) acco
 ```
 
 but actuly what the method getSeconds() do here i didn't look actually to the method but i think it' simple it just convert date from MS to S and use S % 60 that will return seconds like what getSeconds method do
+note : the way that getSeconds method use for get seconds it's deferent of cours and and if you want to know complete way you need to have look to [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) or [ECMAScript](https://tc39.es/ecma262/multipage/numbers-and-dates.html#sec-date.prototype.getseconds) specification.
 
 ```js
 setInterval(() => {
@@ -68,4 +71,3 @@ setInterval(() => {
   console.log(parseInt(day / 1000) % 60); // output: 54
 }, 1000);
 ```
-
