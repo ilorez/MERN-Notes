@@ -15,3 +15,10 @@ console.log(dateNow.getDay());
 console.log(dateNow.getHours());
 console.log(dateNow.getMinutes());
 console.log(dateNow.getSeconds());
+
+setInterval(() => {
+    let day = new Date()
+    console.log(day.getSeconds())
+    console.log(parseInt(day / 1000) % 60)
+}, 1000);
+console.log(8 / 3)

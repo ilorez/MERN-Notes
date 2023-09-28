@@ -52,3 +52,20 @@ Search For
     - getMinutes()
 
     - getSeconds()
+
+=> We learned before what is Obj and we know that the date it's also a obj and this methods above it's obj methods, so we need just to use it like just we learned.
+
+```js
+const seconds = dateNow.getSeconds(); // output : (number between 0 and 59) according to localtime
+```
+
+but actuly what the method getSeconds() do here i didn't look actually to the method but i think it' simple it just convert date from MS to S and use S % 60 that will return seconds like what getSeconds method do
+
+```js
+setInterval(() => {
+  let day = new Date();
+  console.log(day.getSeconds()); // output: 54
+  console.log(parseInt(day / 1000) % 60); // output: 54
+}, 1000);
+```
+
