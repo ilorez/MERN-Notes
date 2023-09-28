@@ -1,5 +1,12 @@
 # Date and Time
 
+## Contents
+
+- [Part 1 - Introduction](#part-1---introduction)
+- [Part 2 - Get Date And Time Methods](#part-2---get-date-methods)
+- [Part 3 - Set Date And Time Methods](#part-3---set-date-methods)
+- [Part 4 - Formatting Date](#part-4---fromatting-date)
+
 ## Part 1 - Introduction
 
 - Date Constructor
@@ -35,7 +42,7 @@ Search For
 
 - Year 2038 Problem in Computer Science.
 
-## Part 2 - Get Date And Time Methods
+## Part 2 - Get Date Methods
 
 #### get date using date methods
 
@@ -65,7 +72,7 @@ setInterval(() => {
 }, 1000);
 ```
 
-## Part 3
+## Part 3 - Set Date Methods
 
 #### set time using date methods
 
