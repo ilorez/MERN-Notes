@@ -39,21 +39,14 @@ Search For
 
 #### get date using date methods
 
-    - getTime() => Number Of Milliseconds
-
-    - getDate() => Day Of The Month
-
-    - getFullYear() => (2023)
-
-    - getMonth() => Zero Based
-
-    - getDay() => Day Of The Week
-
-    - getHours()
-
-    - getMinutes()
-
-    - getSeconds()
+- getTime() => Number Of Milliseconds
+- getDate() => Day Of The Month
+- getFullYear() => (2023)
+- getMonth() => Zero Based
+- getDay() => Day Of The Week
+- getHours()
+- getMinutes()
+- getSeconds()
 
 => We learned before what is Obj and we know that the date it's also a obj and this methods above it's obj methods, so we need just to use it like just we learned.
 
