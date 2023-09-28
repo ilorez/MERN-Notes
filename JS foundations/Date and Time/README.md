@@ -103,3 +103,33 @@ time.getDate(-2); // time => 1969-12-29T00:00:10.000Z
 ```
 
 --> for other methods `setFullYear()`, `setMonth()`... and others it's accept same roles.
+
+## Part 4 - Fromatting Date
+
+new Date(timestamp)
+new Date(Date String)
+new Date(Numeric Values)
+
+Format
+
+- "Oct 25 1982"
+- "10/25/1982"
+- "1982-10-25" => ISO International Standard
+- "1982 10"
+- "1982"
+- "82"
+- 1982, 9, 25, 2, 10, 0
+- 1982, 9, 25
+- "1982-10-25T06:10:00Z"
+
+```js
+Date.parse("String"); // Read Date From A String
+```
+
+```js
+console.log(Date.parse("Aug 25 2003")); // 1061769600000
+let date2 = new Date(1061769600000); // => date2 = 2003-08-25T00:00:00.000Z
+let date3 = new Date("10-25-1982"); // => date3 = 1982-10-25T00:00:00.000Z
+```
+
+--> in `Prat 4` file you can find how to use every type of date fromat
