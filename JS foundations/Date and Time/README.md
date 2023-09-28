@@ -176,3 +176,5 @@ console.log(duration);
 `performance.now() and performance.mark() are both methods provided by the Performance interface in JavaScript, specifically in the browser's Web APIs. They are used to measure and analyze the performance of code and other operations in a web application.
 
 #### Note: take look inside Part 5 file
+
+Happy Coding!
