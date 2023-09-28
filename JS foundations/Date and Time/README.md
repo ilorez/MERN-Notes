@@ -6,6 +6,7 @@
 - [Part 2 - Get Date And Time Methods](#part-2---get-date-methods)
 - [Part 3 - Set Date And Time Methods](#part-3---set-date-methods)
 - [Part 4 - Formatting Date](#part-4---fromatting-date)
+- [Part 5 - Tracking Operations Time](#part-5---tracking-operations-time)
 
 ## Part 1 - Introduction
 
@@ -140,3 +141,38 @@ let date3 = new Date("10-25-1982"); // => date3 = 1982-10-25T00:00:00.000Z
 ```
 
 --> in `Prat 4` file you can find how to use every type of date fromat
+
+## Part 5 - Tracking Operations Time
+
+- Track Operations Time
+
+```js
+// Start Time
+let start = new Date();
+
+// Operation
+for (let i = 0; i < 1000; i++) {
+  //    document.write(`<div>${i}</div>`);
+  //    let div = document.createElement("div");
+  //    div.appendChild(document.createTextNode(i));
+  //    document.body.appendChild(div);
+  console.log("Hellow world! ".repeat(100));
+}
+
+// Time End
+let end = new Date();
+
+// Operation Duration
+let duration = end - start;
+
+console.log(duration);
+```
+
+=> there is arleady a function build doing what arleady do:
+
+- performance.now()
+- performance.mark()
+
+`performance.now() and performance.mark() are both methods provided by the Performance interface in JavaScript, specifically in the browser's Web APIs. They are used to measure and analyze the performance of code and other operations in a web application.
+
+#### Note: take look inside Part 5 file
