@@ -8,6 +8,7 @@
 import * as all from "./main.js";
 
 console.log(all);
+console.log(typeof all)
 
 console.log(all.myNumber);
 console.log(all.arr);

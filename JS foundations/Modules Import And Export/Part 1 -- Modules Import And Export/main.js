@@ -3,11 +3,11 @@
   - Import And Export
 */
 
-let a = 10;
+export let a = 10;
 let arr = [1, 2, 3, 4];
 
 function saySomething() {
-    return `Something`;
+  return `Something`;
 }
 
-export { a, arr, saySomething };
+export { arr, saySomething };
