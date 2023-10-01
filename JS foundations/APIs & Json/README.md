@@ -1,5 +1,14 @@
 # Understanding APIs and JSON
-## What is an API?
+
+
+## Table of Content
+- [What is an API](#what-is-an-api) 
+- [JSON (JavaScript Object Notation)](#json-(javascript-object-notation)) 
+- [API Overview](#api-overview) 
+- [Tools to Test APIs](#tools-to-test-apis) 
+- [Parse And Stringify](#parse-and-stringify) 
+ 
+## What is an API
 API stands for **Application Programming Interface**. It is a set of rules and protocols that allows different software applications to communicate with each other. APIs define the methods and data formats that applications can use to request and exchange information.
 
 In simpler terms, an API acts as a bridge between different software systems, enabling them to interact with each other and share data seamlessly.

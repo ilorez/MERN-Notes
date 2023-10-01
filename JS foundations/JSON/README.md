@@ -1,5 +1,10 @@
 # json
 
+
+## Table of Content
+- [What Is JSON](#what-is-json) 
+- [JSON Syntax & Available Data Types](#json-syntax--available-data-types) 
+ 
 ## What Is JSON
   - JavaScript Object Notation
   - Format For Sharing Data Between Server And Client

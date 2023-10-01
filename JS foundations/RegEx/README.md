@@ -1,14 +1,26 @@
-## Regular Expression
+# Regular Expression
 
-### Part 1:
 
-#### Syntax
+
+## Table of Content
+- [Part 1](#part-1) 
+- [Part 2](#part-2) 
+- [Part 3](#part-3) 
+- [Part 3](#part-3) 
+- [part 4](#part-4) 
+- [Part 5](#part-5) 
+- [Part 6](#part-6) 
+- [Part 7](#part-7) 
+ 
+## Part 1
+
+### Syntax
 
 /pattern/modifier(s);
 
 new RegExp("pattern", "modifier(s)")
 
-#### Modifiers => Flags
+### Modifiers => Flags
 
 i => case-insensitive
 
@@ -16,7 +28,7 @@ g => global
 
 m => Multilines
 
-#### Search Methods
+### Search Methods
 
 - match(Pattern)
 
@@ -37,9 +49,9 @@ console.log(myString.match(regex));
 //output: [Elzero, elzero]
 ```
 
-### Part 2
+## Part 2
 
-#### Ranges
+### Ranges
 
 - Part A
 
@@ -63,9 +75,9 @@ console.log(myString.match(regex));
 
   [^abc]
 
-### Part 3
+## Part 3
 
-#### Character Classes
+### Character Classes
 
 . => matches any character, except newline or other line terminators.
 
@@ -91,15 +103,15 @@ console.log(email.match(word));
 console.log(email.match(valid));
 ```
 
-### Part 3
+## Part 3
 
-#### Character Classes
+### Character Classes
 
 \b => matches at the beginning or end of a word.
 
 \B => matches NOT at the beginning/end of a word.
 
-#### Test Method
+### Test Method
 
 pattern.test(input)
 
@@ -114,9 +126,9 @@ console.log(/(\bspam|spam\b)/gi.test("1Spam"));
 console.log(/(\bspam|spam\b)/gi.test("Spam1"));
 ```
 
-### part 4
+## part 4
 
-#### Quantifiers
+### Quantifiers
 
 - part A
 
@@ -144,7 +156,7 @@ console.log(/(\bspam|spam\b)/gi.test("Spam1"));
 
   ?! => Not Followed By Something
 
-##### p.A
+#### p.A
 
 ```js
 let mails = "o@nn.sa osama@gmail.com elzero@gmail.net osama@mail.ru"; // All Emails
@@ -161,7 +173,7 @@ let urlsRe = /(https?:\/\/)?(www.)?\w+.\w+/gi;
 console.log(urls.match(urlsRe)); //output: [ 'https://google.com', 'http://www.website.net', 'web.com' ]
 ```
 
-##### p.B
+#### p.B
 
 ```js
 let serials = "S100S S3000S S50000S S950000S";
@@ -171,7 +183,7 @@ console.log(serials.match(/s\d{4,5}s/gi)); // S[Four Or Five Number]S
 console.log(serials.match(/s\d{4,}s/gi)); // S[At Least Four]S
 ```
 
-##### p.C
+#### p.C
 
 ```js
 let myString = "We Love Programming";
@@ -186,7 +198,7 @@ console.log(names.match(/\d\w{5}(?=Z)/gi));
 console.log(names.match(/\d\w{8}(?!Z)/gi));
 ```
 
-### Part 5
+## Part 5
 
     - replace
 
@@ -201,9 +213,9 @@ console.log(txt.replaceAll(re, "JavaScript"));
 console.log(txt.replaceAll(/@/gi, "JavaScript"));
 ```
 
-### Part 6
+## Part 6
 
-#### Form Validation
+### Form Validation
 
 - Input Form Validation Practice
 
@@ -226,9 +238,9 @@ document.getElementById("register").onsubmit = function () {
 };
 ```
 
-### Part 7
+## Part 7
 
-#### partique
+### partique
 
 - Create RegExp that match all the urls
 

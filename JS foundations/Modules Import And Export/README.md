@@ -5,6 +5,12 @@ Hello in this repo part you will learn how to use Import & Expot.
   - tasks dividing: you can make for every task (create user, delete user, create a card, update something, fetch data) a file that will just do one simple thing and if you want it you call using import
 - there many things that should use in import and export but now in this part we will see just the basics of use.
 
+
+## Table of Content
+- [Export](#export) 
+- [Import](#import) 
+- [ Named vs Default Export And Import All](#named-vs-default-export-and-import-all) 
+ 
 ## Export
 - we use export if we have a function or value that we want to share from a file to another.
 

@@ -1,5 +1,11 @@
 # Generator Function
 
+
+## Table of Content
+- [Part 1 -- Generator Function Introduction](#part-1----generator-function-introduction) 
+- [Part 2 - Delegate Generator Function](#part-2---delegate-generator-function) 
+- [Part 3 - Generate Infinite Numbers](#part-3---generate-infinite-numbers) 
+ 
 ## Part 1 -- Generator Function Introduction
 
 - Generator Function Run Its Code When Required.

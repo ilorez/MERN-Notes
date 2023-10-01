@@ -2,6 +2,16 @@
 
 Object-Oriented Programming (OOP) is a programming paradigm that organizes code into `objects` which are instances of `classes`. It promotes concepts like `encapsulation, inheritance, polymorphism, and abstraction` to enhance code organization, reusability, and flexibility. OOP enables modeling real-world entities and their interactions through a structured approach, improving code maintainability and scalability. Common OOP languages include Java, Python, C++, and more.
 
+
+
+## Table of Content
+- [Part 1 - Create , Update Properties/Methodes And Built In Constructors](#part-1---create--update-propertiesmethodes-and-built-in-constructors) 
+- [Part 2 - Class Static Properties And Methods](#part-2---class-static-properties-and-methods) 
+- [Part 3 - Inheritance](#part-3---inheritance) 
+- [Part 4 - Encapsulation](#part-4---encapsulation) 
+- [Part 5 - Prototype](#part-5---prototype) 
+- [Part 6 - Object Meta Data And Descriptor](#part-6---object-meta-data-and-descriptor) 
+ 
 ## Part 1 - Create , Update Properties/Methodes And Built In Constructors
 
 ### simple class obj
@@ -86,7 +96,7 @@ static method1() {
 }
 ```
 
-## part 3 Inheritance
+## Part 3 - Inheritance
 
 -> in the example below we created a class that we called it User:
 
@@ -139,7 +149,7 @@ console.log(adminOne.p); // 1
 console.log(adminOne.sayHello()); // Hello Mahmoud
 ```
 
-## Encapsulation
+## Part 4 - Encapsulation
 
 - Class Fields Are Public By Default
 
