@@ -1,4 +1,11 @@
 # AJAX
+
+
+## Table of Content
+- [Introduction](#introduction) 
+- [Part 1 - Request And Response From Real API](#part-1---request-and-response-from-real-api) 
+- [Part 2 - Loop On Data](#part-2---loop-on-data) 
+ 
 ## Introduction
 ![aja logo](https://www.w3schools.com/whatis/img_ajax.jpg)
 
@@ -75,6 +82,9 @@ loading page if this page not exists it's this status code will be 404 Not Found
 
   [404] Not Found
 
-## Part 2 - Loop On Data
-
+## Part 2 - Loop On Data\
+for get some notes about looping on Data and take a look to how AJAX Working with DOM, look to script inside Part 2
+### Search
+  - Cross Origin API [CORS]
+  - API Authentication
 
