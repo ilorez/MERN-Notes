@@ -162,3 +162,54 @@ Find out more about using the Fetch API features in Using Fetch, and study conce
 [Read More About Fetch API (MDN Docs)](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
 
 
+## Part 6 -- Promise – All, All Settled, Race
+there is here three promises with defrenet timeout or done duration for use `All`,`All Settled` & `Race` methods on it.
+```js
+const myFirstPromise = new Promise((res, rej) => {
+    setTimeout(() => {
+        res("Iam The First Promise");
+    }, 5000);
+});
+
+const mySecondPromise = new Promise((res, rej) => {
+    setTimeout(() => {
+        rej("Iam The Second Promise");
+    }, 1000);
+});
+
+const myThirdPromise = new Promise((res, rej) => {
+    setTimeout(() => {
+        res("Iam The Third Promise");
+    }, 2000);
+});
+```
+### All
+Creates a Promise that is resolved with an array of results when all of the provided Promises resolve, or rejected when any Promise is rejected.
+
+=> return an array of promises result if all promises has done with success (fulfilled) or return the first rejected if one of the promises array has rejected
+```js
+Promise.all([myFirstPromise, mySecondPromise, myThirdPromise]).then(
+  (resolvedValues) => console.log(resolvedValues),
+  (rejectedValue) => console.log(`Rejected: ${rejectedValue}`)
+```
+### All Settked
+Creates a Promise that is resolved with an array of results when all of the provided Promises resolve or reject.
+
+=> return array of the promises result if was fulfilled or rejected
+```js
+Promise.allSettled([myFirstPromise, mySecondPromise, myThirdPromise]).then(
+  (resolvedValues) => console.log(resolvedValues),
+  (rejectedValue) => console.log(`Rejected: ${rejectedValue}`)
+);
+```
+### Race
+Creates a Promise that is resolved or rejected when any of the provided Promises are resolved or rejected.
+
+it's like a race first one done will return as the result, if it was Fulfilled or rejected.
+```js
+Promise.race([myFirstPromise, mySecondPromise, myThirdPromise]).then(
+    (resolvedValues) => console.log(resolvedValues),
+    (rejectedValue) => console.log(`Rejected: ${rejectedValue}`)
+);
+```
+
