@@ -22,20 +22,44 @@ app.set('view engine', 'ejs');
 app.use(express.static(`public`))
 app.use(morgan('dev'))
 
+app.get('/add-blog', (req, res) => {
+  const blog = new Blog({
+    title: "blog title 2",
+    snippet: "blog snippet",
+    body: "blog body"
+  })
+  blog.save()
+    .then((request) => {
+      res.send(request)
+    }).catch((err) => console.log(err))
+})
+
+app.get('/all-blogs', (req, res) => {
+  Blog.find()
+    .then((result) => {
+      res.send(result)
+    }).catch((err) => console.log(err))
+})
+app.get('/single-blog', (req, res) => {
+  Blog.findById("6523325b70ff8ed9930d6a1f")
+    .then((result) => {
+      res.send(result)
+    })
+    .catch((err) => console.log(err))
+})
 app.get('/', (req, res) => {
-  res.redirect('blogs')
+  const blogs = [
+    { title: 'Yoshi finds eggs', snippet: 'Lorem ipsum dolor sit amet consectetur' },
+    { title: 'Mario finds stars', snippet: 'Lorem ipsum dolor sit amet consectetur' },
+    { title: 'How to defeat bowser', snippet: 'Lorem ipsum dolor sit amet consectetur' },
+  ];
+  res.render('index', { title: 'Home', blogs });
 });
 
 app.get('/about', (req, res) => {
   res.render('about', { title: 'About' });
 });
-// blogs root
-app.get('/blogs', (req, res) => {
-  Blog.find().sort({ createdAt: -1 })
-    .then((resultValue) => {
-      res.render('index', { title: "blogs", blogs: resultValue })
-    })
-})
+
 app.get('/blogs/create', (req, res) => {
   res.render('create', { title: 'Create a new blog' });
 });
