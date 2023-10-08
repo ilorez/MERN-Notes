@@ -128,7 +128,7 @@ getData("https://api.github.com/users/ilorez/repos")
 
 **Note**: look to Part 4 script file to full understanding
 
-## Fetch API
+## Part 5 - Fetch API
 **The Fetch API** provides an interface for fetching resources (including across the network). It is a more powerful and flexible replacement for **XMLHttpRequest**.
 ```js
 fetch("https://api.github.com/users/ilorez/repos")
@@ -162,7 +162,7 @@ Find out more about using the Fetch API features in Using Fetch, and study conce
 [Read More About Fetch API (MDN Docs)](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
 
 
-## Part 6 -- Promise – All, All Settled, Race
+## Part 6 - Promise – All, All Settled, Race
 there is here three promises with defrenet timeout or done duration for use `All`,`All Settled` & `Race` methods on it.
 ```js
 const myFirstPromise = new Promise((res, rej) => {
@@ -213,7 +213,7 @@ Promise.race([myFirstPromise, mySecondPromise, myThirdPromise]).then(
 );
 ```
 
-## Part 7 -- Async And Training
+## Part 7 - Async And Training
   - Async Before Function Mean This Function Return A Promise
   - Async And Await Help In Creating Asynchronous Promise Behavior With Cleaner Style
 
@@ -241,3 +241,29 @@ getData().then(
   - when you mark a function as 'async', it means tht the function will always return a Promise. The Promise will either be resolved with the value the function produces or rejected with an error it encounters.
   - By using 'async' and 'await' in combination, you can write asynchronous code in a more synchronous-looking manner, making it easier to work with promises and handle asynchronous operations without dealing with callback functions or using "then" chains extensively.
 
+## Part - Await And Training
+  - Await Works Only Inside Asnyc Functions
+  - Await Make JavaScript Wait For The Promise Result
+  - Await Is More Elegant (Greate/cool) Syntax Of Getting Promise Result
+```js
+const myPromise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        // resolve("Iam The Good Promise");
+        reject(Error("Iam The Bad Promise"));
+    }, 3000);
+});
+
+async function readData() {
+    console.log("Before Promise");
+    // myPromise.then((resolvedValue) => console.log(resolvedValue));
+    // console.log(await myPromise);
+    console.log(await myPromise.catch((err) => err));
+    console.log("After Promise");
+}
+
+readData();
+```
+
+There nothing to explain but i will add some notes:
+  - the await it's do work of then automatiquely and it's return the resovedValue or rejectedValue
+  - if we reject a error we need to make sure to use catch on await promise, or it's will not keep running the code if it found
