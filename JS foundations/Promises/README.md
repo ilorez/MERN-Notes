@@ -241,7 +241,7 @@ getData().then(
   - when you mark a function as 'async', it means tht the function will always return a Promise. The Promise will either be resolved with the value the function produces or rejected with an error it encounters.
   - By using 'async' and 'await' in combination, you can write asynchronous code in a more synchronous-looking manner, making it easier to work with promises and handle asynchronous operations without dealing with callback functions or using "then" chains extensively.
 
-## Part - Await And Training
+## Part 8 - Await And Training
   - Await Works Only Inside Asnyc Functions
   - Await Make JavaScript Wait For The Promise Result
   - Await Is More Elegant (Greate/cool) Syntax Of Getting Promise Result
@@ -267,3 +267,26 @@ readData();
 There nothing to explain but i will add some notes:
   - the await it's do work of then automatiquely and it's return the resovedValue or rejectedValue
   - if we reject a error we need to make sure to use catch on await promise, or it's will not keep running the code if it found
+
+
+## Part 9 - Try, Catch, Finally With Fetch
+
+- we trying here to fetch data from github api using try catch for catch error:
+
+```js
+async function fetchData(apiLink) {
+    try {
+        let dataJson = await fetch(apiLink)
+        let r = await dataJson.json()
+        console.log(`Bio:\n${r.bio}`)
+    } catch (reason) {
+        console.log("Reason " + reason)
+
+    } finally {
+        console.log("fetching done")
+    }
+}
+
+const p = "https://api.github.com/users/ilorez"
+fetchData(p)
+```
