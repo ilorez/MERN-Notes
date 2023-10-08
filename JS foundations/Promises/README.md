@@ -1,6 +1,30 @@
 # Promise
 
 
+
+## Table of Content
+- [Callback Hell](#callback-hell) 
+  - [What Is Callback](#what-is-callback) 
+  - [Callback Hell Example](#callback-hell-example) 
+  - [How to fix this probleme](#how-to-fix-this-probleme) 
+- [Promise Intro And Syntax](#promise-intro-and-syntax) 
+  - [What is Promise](#what-is-promise) 
+  - [Promise Status](#promise-status) 
+  - [Story (promise way story)](#story-(promise-way-story)) 
+- [Part 3 - Promise – Then, Catch & Finally](#part-3---promise-–-then-catch--finally) 
+  - [story](#story) 
+  - [story => code](#story->-code) 
+- [Part 4 - Promise And XmlHttpRequest](#part-4---promise-and-xmlhttprequest) 
+- [Part 5 - Fetch API](#part-5---fetch-api) 
+  - [Concepts and usage](#concepts-and-usage) 
+- [Part 6 - Promise – All, All Settled, Race](#part-6---promise-–-all-all-settled-race) 
+  - [All](#all) 
+  - [All Settked](#all-settked) 
+  - [Race](#race) 
+- [Part 7 - Async And Training](#part-7---async-and-training) 
+- [Part 8 - Await And Training](#part-8---await-and-training) 
+- [Part 9 - Try, Catch, Finally With Fetch](#part-9---try-catch-finally-with-fetch) 
+ 
 ## Callback Hell
   Pyramid Of Doom || Callback Hell
 
@@ -290,3 +314,4 @@ async function fetchData(apiLink) {
 const p = "https://api.github.com/users/ilorez"
 fetchData(p)
 ```
+Happy Coding!
