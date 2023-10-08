@@ -213,3 +213,31 @@ Promise.race([myFirstPromise, mySecondPromise, myThirdPromise]).then(
 );
 ```
 
+## Part 7 -- Async And Training
+  - Async Before Function Mean This Function Return A Promise
+  - Async And Await Help In Creating Asynchronous Promise Behavior With Cleaner Style
+
+
+```
+  async function getData() {
+    let users = [];
+    if (users.length > 0) {
+        return "Users Found";
+    } else {
+        throw new Error("No Users Found");
+    }
+}
+
+console.log(getData());
+
+getData().then(
+    (resolvedValue) => console.log(resolvedValue),
+    (rejectedValue) => console.log("Rejected " + rejectedValue)
+);
+```
+
+**Notes**:
+  - In JS, 'async' is a keyword used to define an asynchronous function returns a Promise, allowing for better handing of asynchrounous operations.
+  - when you mark a function as 'async', it means tht the function will always return a Promise. The Promise will either be resolved with the value the function produces or rejected with an error it encounters.
+  - By using 'async' and 'await' in combination, you can write asynchronous code in a more synchronous-looking manner, making it easier to work with promises and handle asynchronous operations without dealing with callback functions or using "then" chains extensively.
+
