@@ -4,17 +4,29 @@
 
 
 
+
+
+
 ## Table of Content
-- [Part 1](#part-1) 
-- [Part 2](#part-2) 
-- [Part 3](#part-3) 
-- [Part 3](#part-3) 
-- [part 4](#part-4) 
-- [Part 5](#part-5) 
-- [Part 6](#part-6) 
-- [Part 7](#part-7) 
+- [Part 1 - Intro & Modifiers](#part-1---intro--modifiers) 
+  - [Syntax](#syntax) 
+  - [Modifiers => Flags](#modifiers->-flags) 
+  - [Search Methods](#search-methods) 
+- [Part 2 - Ranges](#part-2---ranges) 
+- [Part 3 - Character Classes ](#part-3---character-classes) 
+  - [Part I](#part-i) 
+  - [Pratique](#pratique) 
+  - [Part II](#part-ii) 
+  - [Pratique](#pratique) 
+- [part 4 - Quantifiers](#part-4---quantifiers) 
+  - [Use way .A](#use-way-a) 
+  - [Use way .B](#use-way-b) 
+  - [Use way .C](#use-way-c) 
+- [Part 5 - Replace With Pattern](#part-5---replace-with-pattern) 
+- [Part 6 -- Form Validation](#part-6----form-validation) 
+- [Part 7 -- Pratique](#part-7----pratique) 
  
-## Part 1
+## Part 1 - Intro & Modifiers
 
 ### Syntax
 
@@ -51,9 +63,7 @@ console.log(myString.match(regex));
 //output: [Elzero, elzero]
 ```
 
-## Part 2
-
-### Ranges
+## Part 2 - Ranges
 
 - Part A
 
@@ -77,9 +87,9 @@ console.log(myString.match(regex));
 
   [^abc]
 
-## Part 3
+## Part 3 - Character Classes 
 
-### Character Classes
+### Part I
 
 . => matches any character, except newline or other line terminators.
 
@@ -95,6 +105,8 @@ console.log(myString.match(regex));
 
 \S => matches non whitespace character.
 
+### Pratique
+
 ```js
 let email = "O@@@g...com O@g.com O@g.net A@Y.com O-g.com o@s.org 1@1.com";
 let dot = /./g;
@@ -105,15 +117,13 @@ console.log(email.match(word));
 console.log(email.match(valid));
 ```
 
-## Part 3
-
-### Character Classes
+### Part II
 
 \b => matches at the beginning or end of a word.
 
 \B => matches NOT at the beginning/end of a word.
 
-### Test Method
+### Pratique
 
 pattern.test(input)
 
@@ -128,10 +138,7 @@ console.log(/(\bspam|spam\b)/gi.test("1Spam"));
 console.log(/(\bspam|spam\b)/gi.test("Spam1"));
 ```
 
-## part 4
-
-### Quantifiers
-
+## part 4 - Quantifiers
 - part A
 
   n+ => One Or More
@@ -158,7 +165,7 @@ console.log(/(\bspam|spam\b)/gi.test("Spam1"));
 
   ?! => Not Followed By Something
 
-#### p.A
+### Use way .A
 
 ```js
 let mails = "o@nn.sa osama@gmail.com elzero@gmail.net osama@mail.ru"; // All Emails
@@ -175,7 +182,7 @@ let urlsRe = /(https?:\/\/)?(www.)?\w+.\w+/gi;
 console.log(urls.match(urlsRe)); //output: [ 'https://google.com', 'http://www.website.net', 'web.com' ]
 ```
 
-#### p.B
+### Use way .B
 
 ```js
 let serials = "S100S S3000S S50000S S950000S";
@@ -185,7 +192,7 @@ console.log(serials.match(/s\d{4,5}s/gi)); // S[Four Or Five Number]S
 console.log(serials.match(/s\d{4,}s/gi)); // S[At Least Four]S
 ```
 
-#### p.C
+### Use way .C
 
 ```js
 let myString = "We Love Programming";
@@ -200,7 +207,7 @@ console.log(names.match(/\d\w{5}(?=Z)/gi));
 console.log(names.match(/\d\w{8}(?!Z)/gi));
 ```
 
-## Part 5
+## Part 5 - Replace With Pattern
 
     - replace
 
@@ -215,9 +222,8 @@ console.log(txt.replaceAll(re, "JavaScript"));
 console.log(txt.replaceAll(/@/gi, "JavaScript"));
 ```
 
-## Part 6
+## Part 6 -- Form Validation
 
-### Form Validation
 
 - Input Form Validation Practice
 
@@ -240,9 +246,8 @@ document.getElementById("register").onsubmit = function () {
 };
 ```
 
-## Part 7
+## Part 7 -- Pratique
 
-### partique
 
 - Create RegExp that match all the urls
 
