@@ -117,10 +117,58 @@ so what this code say:
   - if the url is root (/) render home component
   - if the url is (/about) render about component
 
-## React Router new version Router Provider, createBrowserRouter & Outlet
+## React Router new version 
+for acces to new feature in react router we need to work with new version, that incolude defrent syntax new concepts, but it's completly fine to work with old version, it's sill working.
 
+## Syntax
 
+```js
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider
+} from 'react-router-dom'
 
+// pages
+import Home from './pages/home'
+import About from './pages/about'
 
+// layouts
+import RootLayout from './layouts/RootLayout'
 
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<RootLayout />}>
+      <Route index element={<Home />} />
+      <Route path="about" element={<About />} />
+    </Route>
+  )
+)
+
+function App() {
+  return (
+    <RouterProvider router={router} />
+  );
+}
+
+export default App
+
+```
+
+### createBrowserRoute
+This is the recommended router for all React Router web projects. It uses the [DOM History API](https://developer.mozilla.org/en-US/docs/Web/API/History) to update the URL and manage the history stack.
+
+It also enables the v6.4 data APIs like [loaders](https://reactrouter.com/en/main/route/loader), [actions](https://reactrouter.com/en/main/route/action), [fetchers](https://reactrouter.com/en/main/hooks/use-fetcher) and more.
+
+### JSX Routes
+there is two to set your routes configer first one user obj inside objet to set your dom tree
+And for our final trick, many folks prefer to configure their routes with JSX. You can do that with createRoutesFromElements. There is no functional difference between JSX or objects when configuring your routes, it's simply a stylistic preference.
+
+### Router Provider
+
+All data router objects are passed to this component to render your app and enable the rest of the data APIs.
+
+### Outlet
+An `<Outlet>` should be used in parent route elements to render their child route elements. This allows nested UI to show up when child routes are rendered. If the parent route matched exactly, it will render a child index route or nothing if there is no index route.
 

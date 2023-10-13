@@ -1,0 +1,9 @@
+header nav {
+    display: flex;
+    gap: 2rem;
+    justify-content: end;
+}
+
+header nav .active {
+    color: green;
+}
