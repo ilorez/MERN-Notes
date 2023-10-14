@@ -172,3 +172,43 @@ All data router objects are passed to this component to render your app and enab
 ### Outlet
 An `<Outlet>` should be used in parent route elements to render their child route elements. This allows nested UI to show up when child routes are rendered. If the parent route matched exactly, it will render a child index route or nothing if there is no index route.
 
+## 404 Not Found Page
+when the user open our wep app with wrong path we give him a page that say there is no page with this name, and give him some links to go to home page or contacts or ....
+
+```js
+<Route path='*' element={<NotFound />} />
+```
+we add this Route in the buttom of our parent path, and user will see if path is not in our react router routes
+
+## loader
+
+Each route can define a "loader" function to provide data to the route element before it renders.
+```js
+// ... : other codes in app.jsx
+import Careers, { loadingCarrers } from './pages/carrers/Careers'
+// ...
+<Route index element={<Careers />} loader={loadingCarrers} />
+// ...
+```
+inside ther loader we put a fetch aync function that return a promise and the hook useLoaderData will get resolve that from promise
+
+```js
+export const loadingCarrers = async () => {
+    const res = await fetch("http://localhost:4000/careers")
+
+    return res.json()
+}
+```
+***Note***: you can set loader function in any file and import it
+
+### useLoaderData
+This hook provides the value returned from your route loader.
+
+- it's important to set the useLoaderData hook inside the route element component that hove `loader`
+```js
+import { useLoaderData } from "react-router-dom"
+// ...
+const careers = useLoaderData() // array of careers obj
+```
+
+

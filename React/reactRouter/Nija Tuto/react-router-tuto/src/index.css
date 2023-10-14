@@ -77,3 +77,22 @@ button:focus-visible {
   display: flex;
   gap: 2rem;
 }
+
+/* carrers style  */
+.careers-container {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  gap: 1rem;
+}
+
+
+
+.careers-container div a {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  color: white;
+  background-color: #343434;
+  padding: 2px 30px;
+}
