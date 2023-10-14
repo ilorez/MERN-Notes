@@ -7,7 +7,7 @@ export default function Careers() {
         <div className="careers-container">
             {careers.map(c => (
                 <div key={c.id}>
-                    < Link to="/"  >
+                    < Link to={c.id.toString()}  >
                         <p >{c.title}</p>
                         <p >{c.location}</p>
                     </Link >
@@ -19,6 +19,9 @@ export default function Careers() {
 
 export const loadingCarrers = async () => {
     const res = await fetch("http://localhost:4000/careers")
+    if (!res.ok) {
+        throw Error("the Feching data has field")
+    }
 
     return res.json()
 }

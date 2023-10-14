@@ -210,5 +210,63 @@ import { useLoaderData } from "react-router-dom"
 // ...
 const careers = useLoaderData() // array of careers obj
 ```
+## Route Parameters
+- Changeable section of a route
+- Same component shown for every variation (same template)
+
+Example:
+
+- /users/username
+- /users/spider-wahmane
+- /users/whybe
+- /users/tchisama
+- /users/nsila
+- /users/ilroez
+
+in this example above we have same path /users but the useranme changeable section in path
+
+```js
+<Route 
+path="/users/:username" 
+element={<UserComponentTemplate />}
+loader={fetch_User_Data_Function}
+/>
+``` 
+the React Router send auto the username to fetch_User_Data_Function params u can get it using
+
+```js
+export const fetch_User_Data_Function = async ({ params }) => {
+    const { id } = params
+    console.log(id) // username
+    const res = await fetch("http://api.example.com/users/" + id)
+    return res.json()
+}
+```
+we can get data from this function using the useLoaderData hook like what we did last Part [loader](#loader)
+
+There is another hook we can use if we want to get the username inside the UserComponentTemplate that called useParams() 
+```js
+const { useranme } = useParams()
+```
+***Note***: make sure to use same route parameter that you put in Route path (here we use :username) in every use of it
+
+you can take a look to /src/pages/careers/CreersDetails.jsx for give a look how we use route parameters
+
+## ErrorElement
+we use ErrorElement to give the user a page error that give him a understand to the probleme and solution
+- for example we use errorElement in our if fetching data has field or the id of carrer not found 
+
+```js
+// ...
+
+<Route path='careers' element={<CareersLayout />} errorElement={<CareersError />} >
+        // Route elements
+</ Route>
+// ...
+
+```
+the errorElement page will shown if any Route of Route elements throw an error
+
+
 
 
