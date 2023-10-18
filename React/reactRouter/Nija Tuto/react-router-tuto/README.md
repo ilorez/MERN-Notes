@@ -2,6 +2,33 @@
 welcome in this short tutorial, you will found basics notes to start working with react-router.
 
 
+
+## Table of Content
+- [Introduction](#introduction) 
+  - [SPA's](#spa's) 
+- [Instalation](#instalation) 
+- [Start Working with react router](#start-working-with-react-router) 
+  - [setup](#setup) 
+- [React Router new version ](#react-router-new-version) 
+- [Syntax](#syntax) 
+  - [createBrowserRoute](#createbrowserroute) 
+  - [JSX Routes](#jsx-routes) 
+  - [Router Provider](#router-provider) 
+  - [Outlet](#outlet) 
+- [404 Not Found Page](#404-not-found-page) 
+- [loader](#loader) 
+  - [useLoaderData](#useloaderdata) 
+- [Route Parameters](#route-parameters) 
+- [ErrorElement](#errorelement) 
+- [useLocation](#uselocation) 
+- [Forms & Actions](#forms--actions) 
+  - [Froms](#froms) 
+    - [Form method](#form-method) 
+    - [From action](#from-action) 
+  - [Action](#action) 
+- [redirect](#redirect) 
+- [Navigate Componenet](#navigate-componenet) 
+ 
 ## Introduction
 First we need to understand the concept of react and how it's work. 
 
@@ -373,3 +400,5 @@ navigate using if for exmple user no singIn u can navigate to another path
 **replace**: if true will repalce the page that you are in with page you navigate to it so you can't back to it
 
 => because it's a component it's easy to use and helpful multi position
+
+Happy Coding!
