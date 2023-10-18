@@ -53,4 +53,4 @@ Node.js can be used to create web servers. Learn how to build a basic web server
 - [Node.js Best Practices](https://github.com/goldbergyoni/nodebestpractices)
 - [Awesome Node.js](https://github.com/sindresorhus/awesome-nodejs)
 
-Feel free to explore the contents of this repository to deepen your understanding of Node.js basics. Contributions and feedback are welcome!
+Happy coding!

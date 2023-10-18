@@ -18,3 +18,6 @@
 ```shell
 npm install
 ```
+
+## lodash 
+npm package that contain some helpful function

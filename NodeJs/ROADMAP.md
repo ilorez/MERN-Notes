@@ -81,4 +81,5 @@ Here are some valuable resources for further learning:
 - [Node.js Design Patterns](https://www.nodejsdesignpatterns.com/)
 - [Awesome Node.js](https://github.com/sindresorhus/awesome-nodejs)
 
-Feel free to customize this roadmap, add more details, and link to specific resources that are relevant to your project's goals. Happy coding!
+
+Happy coding!

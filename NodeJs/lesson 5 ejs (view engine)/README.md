@@ -17,7 +17,7 @@ EJS templates contain embedded JavaScript code within HTML markup. This allows y
 
 To use EJS as a view engine in a Node.js application, you need to follow these steps:
 
-Install EJS: First, you need to install EJS as a dependency in your Node.js project. You can do this using npm or yarn:
+**Install EJS:** First, you need to install EJS as a dependency in your Node.js project. You can do this using npm or yarn:
 
 ```shell
 npm install ejs
@@ -25,7 +25,7 @@ npm install ejs
 yarn add ejs
 ```
 
-Set Up EJS in Your Express App: If you are using Express.js, you can set EJS as your view engine. Here's an example of how to configure EJS in an Express application:
+**Set Up EJS in Your Express App:** If you are using Express.js, you can set EJS as your view engine. Here's an example of how to configure EJS in an Express application:
 
 ```javascript
 const express = require('express');
@@ -48,7 +48,7 @@ console.log('Server is running on port 3000');
 });
 ```
 
-Create EJS Templates: Create EJS templates in a directory specified by the views setting in your Express app. For example, you can create an index.ejs file:
+**Create EJS Templates:** Create EJS templates in a directory specified by the views setting in your Express app. For example, you can create an index.ejs file:
 
 ```html
 <!DOCTYPE html>
@@ -63,7 +63,7 @@ Create EJS Templates: Create EJS templates in a directory specified by the views
 </html>
 ```
 
-Render EJS Templates: Use res.render in your Express routes to render EJS templates and pass data to them as an object. In the example above, we passed the title variable to the index.ejs template.
+**Render EJS Templates:** Use res.render in your Express routes to render EJS templates and pass data to them as an object. In the example above, we passed the title variable to the index.ejs template.
 
 ### Passing Data into Views:
 

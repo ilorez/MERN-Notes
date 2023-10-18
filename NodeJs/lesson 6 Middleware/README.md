@@ -2,6 +2,14 @@
 
 Middleware in Express.js is code that runs between receiving a request and sending a response. The `app.use(fun)` method is used to implement middleware.
 
+
+## Table of Content
+- [Middleware Examples](#middleware-examples) 
+- [Using `next()`](#using-`next()`) 
+- [Third-Party Middleware (`morgan`, `helmet`, ...)](#third-party-middleware-(`morgan`-`helmet`-)) 
+  - [Installation](#installation) 
+- [Serving Static Files (CSS, Images, SVGs, ...)](#serving-static-files-(css-images-svgs-)) 
+ 
 ## Middleware Examples
 
 - **Logger Middleware**: Logs details of every request.

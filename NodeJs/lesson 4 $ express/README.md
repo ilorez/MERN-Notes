@@ -1,5 +1,20 @@
 # Express.js - A Minimal README
 
+
+## Table of Content
+- [What is Express.js?](#what-is-expressjs) 
+- [Getting Started](#getting-started) 
+  - [Prerequisites](#prerequisites) 
+  - [Installation](#installation) 
+- [Hello, World!](#hello-world) 
+- [Basic Concepts](#basic-concepts) 
+  - [Routing](#routing) 
+  - [Middleware](#middleware) 
+  - [Templates](#templates) 
+  - [Further Reading](#further-reading) 
+    - [Express.js](#expressjs) 
+    - [EJS (Embedded JavaScript Templates)](#ejs-(embedded-javascript-templates)) 
+ 
 ## What is Express.js?
 
 Express.js, often referred to as just "Express," is a fast, unopinionated, and minimalist web framework for Node.js. It is designed for building web applications and APIs. Express provides a set of simple and robust features for web and mobile applications, making it one of the most popular choices for web development with Node.js.
@@ -65,7 +80,7 @@ Here, we've defined a route that responds to GET requests at the root URL ('/').
 
 Middleware functions in Express are functions that have access to the request and response objects. They can be used to perform various tasks such as authentication, logging, and data parsing. Middleware can be applied to specific routes or to the entire application. For example:
 
-```js
+```javascript
 app.use(express.json()); // Parse JSON requests
 ```
 
