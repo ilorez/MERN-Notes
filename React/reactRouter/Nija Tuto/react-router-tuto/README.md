@@ -267,6 +267,101 @@ we use ErrorElement to give the user a page error that give him a understand to 
 ```
 the errorElement page will shown if any Route of Route elements throw an error
 
+## useLocation
+```js
+// https://ilorez/tasks/today
+
+import {useLoction} from 'react-router-dom'
+const location = useLocation() // output : /tasks/today
+```
+
+## Forms & Actions
+- in what can used:
+  - create form in any place in your app and send data from it to any script in your app
+
+### Froms
+```js
+import { Form } from "react-router-dom";
+
+<Form method="post" action="/help/contact" >
+        // our fields
+</From>
+```
+- we can import the From from react reouter and put our fields(inputs) just like normla form, and set the method and action but there some defrents here
+#### Form method
+- form it's not send the request using this method you set when you click on sumbmit (nooo),
+the method is just a key and his value `{method:"post"}` that sended to your fanction for use if you need it in other thing.
+
+#### From action
+for not confuesed we have two actions that we need to understand:
+  - action in our form and that what we will talk about
+  - action in our Route (every Route can take it like path and element `ex : action={function}`)
+  ```js
+  <Route path='/help/contact' element={< Contact />} action={contactAction} />
+  ```
+
+
+=> the From action accept a path to your Route that you want to use the action function iside it
+```js
+<Form method="post" action="/help/contact" >
+        // our fields
+</From>
+```
+
+### Action
+this is the other type:
+
+- we need to create function that will send form data to it 
+- the action function must return something
+
+```js
+export const contactAction = async ({ request }) => {
+
+    const data = await request.formData()
+    const submission = {
+        username: data.get("username"),
+        email: data.get("email"),
+        message: data.get("message"),
+    }
+    console.log(submission)
+    // conditions and connection with db
+    if (submission.message.length < 15) {
+        return { error: "the message length must be over 15 chars" }
+    }
+
+    // redirect
+    return redirect("/")
+
+}
+```
+
+- how to use action funtion in Route.
+
+```js
+import { contactAction } from './path/to/function'
+  <Route path='/help/contact' element={< Contact />} action={contactAction} />
+```
+so the history is:
+
+- when u click on sumbit in your form.
+- react create obj Request that contain inforamtion like method path and your input data
+- after that will go to path that you set on From action. 
+- and pass Route action funtion the Request obj
+- after function do what must to (ex : send request to backend) it's will return something 
+- maybe return a message(error or succes) that you get from your database after send data to it 
+- you can get message and alert it or just set in a specifique position in your dom by using 'useActionData'
+- `useActionData`: will get the data that you return from you action function
+
+## redirect
+- redirect user to another path
+```js
+import {redirect } from "react-router-dom";
+redirect('/')
+```
+
+
+
+
 
 
 

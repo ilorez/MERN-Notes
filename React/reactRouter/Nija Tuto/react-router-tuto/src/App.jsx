@@ -17,7 +17,7 @@ import CareersError from './pages/carrers/CareersError'
 
 // help pages
 import Faq from './pages/hekp/Faq'
-import Contact from './pages/hekp/Contact'
+import Contact, { contactAction } from './pages/hekp/Contact'
 
 // layouts
 import RootLayout from './layouts/RootLayout'
@@ -33,7 +33,7 @@ const router = createBrowserRouter(
       <Route path="about" element={<About />} />
       <Route path='help' element={<Help />}>
         <Route path='faq' element={< Faq />} />
-        <Route path='contact' element={< Contact />} />
+        <Route path='contact' element={< Contact />} action={contactAction} />
       </Route>
       <Route path='careers' element={<CareersLayout />} errorElement={<CareersError />} >
         <Route index element={<Careers />} loader={loadingCarrers} />
