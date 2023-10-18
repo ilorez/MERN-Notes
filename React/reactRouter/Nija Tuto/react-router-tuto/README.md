@@ -350,7 +350,7 @@ so the history is:
 - after function do what must to (ex : send request to backend) it's will return something 
 - maybe return a message(error or succes) that you get from your database after send data to it 
 - you can get message and alert it or just set in a specifique position in your dom by using 'useActionData'
-- `useActionData`: will get the data that you return from you action function
+- `useActionData`: return the data that you return from you action function
 
 ## redirect
 - redirect user to another path
@@ -359,9 +359,17 @@ import {redirect } from "react-router-dom";
 redirect('/')
 ```
 
+## Navigate Componenet
 
+```js
+import { Navigate } from "react-router-dom";
+return (<Navigate to="/" replace={true} />)
+```
 
+navigate using if for exmple user no singIn u can navigate to another path 
 
+**to**: the path you want to navigate to.
 
+**replace**: if true will repalce the page that you are in with page you navigate to it so you can't back to it
 
-
+=> because it's a component it's easy to use and helpful multi position
