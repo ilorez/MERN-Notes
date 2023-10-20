@@ -15,7 +15,6 @@ mongoose.connect(dbc, { useNewUrlParser: true, useUnifiedTopology: true })
   ;
 
 
-
 // register view engine
 app.set('view engine', 'ejs');
 // app.set('views', 'myviews');
