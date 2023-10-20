@@ -64,4 +64,59 @@ const Blog = mongoose.model("Blog", blogSchema)
 
 - after this two steps we need just to export module for use it in other files
 
+## Connection with DB
+```js
+const Blog = require("./moduls/blog")
+```
+### Create new Blog
+we can send data to databse useing:
+
+```js
+app.get('/add-blog', (req, res) => {
+  const blog = new Blog({
+    title: "blog title 2",
+    snippet: "blog snippet",
+    body: "blog body"
+  })
+  blog.save()
+    .then((request) => {
+      res.send(request)
+    }).catch((err) => console.log(err))
+})
+```
+- we create here blog with schema that we created and after run blog.save() mongoose do all work from get data and send it to right collection in databse
+- after that we send the request to ourpage (request = blog obj that we created)
+
+### Find blogs
+```js
+app.get('/all-blogs', (req, res) => {
+  Blog.find().sort({ createdAt: -1 })
+    .then((result) => {
+      res.send(result)
+    }).catch((err) => console.log(err))
+})
+```
+`Blog.find()`:return all blogs that in blogs collection in databse inside and array.
+
+`sort({ createdAt: -1 })`: for make the last blogs added go to top
+
+*mongoose it's great*
+
+### Get one single blog by Id
+
+```js
+app.get('/single-blog', (req, res) => {
+  Blog.findById("blog_Id")  // blog_Id =  each blog have unique one
+    .then((result) => {
+      res.send(result)
+    })
+    .catch((err) => console.log(err))
+})
+```
+## mongoose Request types
+
+- **GET**: request to get a resource
+- **POST**: request to create new data (e.g. a new blog)
+- **DELETE**: request to delete data (e.g. delete a blog)
+- **PUT**: request to update data (e.g. update a blog)
 
