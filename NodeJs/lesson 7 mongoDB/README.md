@@ -120,3 +120,50 @@ app.get('/single-blog', (req, res) => {
 - **DELETE**: request to delete data (e.g. delete a blog)
 - **PUT**: request to update data (e.g. update a blog)
 
+### GET
+we use it a lot in last parts
+
+### POST
+let's create a form and send fields values after submit using post request
+
+```html
+<form action="/blogs" method="post">
+  <label for="title">Blog title:</label>
+  <input type="text" id="title" name="title" required>
+  <label for="snippet">Blog snippet:</label>
+  <input type="text" id="snippet" name="snippet" required>
+  <label for="body">Blog body:</label>
+  <textarea id="body" name="body" required></textarea>
+  <button>Submit</button>
+</form>
+```
+```js
+app.post('/blogs', (req, res) => {
+  const blog = new Blog(req.body)
+  blog.save()
+    .then((result) => {
+      res.redirect('/blogs')
+    })
+    .catch((err) => console.log(err))
+})
+```
+so after sumbmit it's will send req obj that contain every details about our request. We can get our data from request using `req.body` and that will return a obj on template `{key:value,...}` 
+
+- **key** = field(input) name
+- **value** = field value
+
+```js
+  const blog = new Blog(req.body)
+```
+maybe this line confused some how.
+
+- **schema template** : { title: String, snippet: String, body: String }
+- **request body** : { title: 'value', snippet: 'value', body: 'value' }
+
+so becouse it's same key or names we don't need to give to each key one by one the value.
+
+after greate our schema obj we need just to save it to our DB like we learned befour and the moongose will do other work
+
+
+
+

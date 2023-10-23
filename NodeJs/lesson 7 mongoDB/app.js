@@ -18,6 +18,8 @@ mongoose.connect(dbc, { useNewUrlParser: true, useUnifiedTopology: true })
 // register view engine
 app.set('view engine', 'ejs');
 // app.set('views', 'myviews');
+
+// middlware
 app.use(express.static(`public`))
 app.use(express.urlencoded({ extended: true }))
 app.use(morgan('dev'))
@@ -47,6 +49,10 @@ app.get('/blogs/create', (req, res) => {
 
 //post data to db
 app.post('/blogs', (req, res) => {
+  // console.log("---------------------------------------------")
+  // console.log(req)
+  // console.log(req.body)
+  // console.log("---------------------------------------------")
   const blog = new Blog(req.body)
   blog.save()
     .then((result) => {
