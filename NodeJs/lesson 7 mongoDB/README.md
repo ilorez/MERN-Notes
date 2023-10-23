@@ -164,6 +164,18 @@ so becouse it's same key or names we don't need to give to each key one by one t
 
 after greate our schema obj we need just to save it to our DB like we learned befour and the moongose will do other work
 
+### Route Parameters
 
+```js
+app.get('/blogs/:id', (req, res) => {
+  const id = req.params.id // id = any thing after /blogs/
+  Blog.findById(id)
+    .then((result) =>
+      res.render('blog', { title: 'MyBlog', blog: result })
+    )
+    .catch((err) => console.log(err))
+})
+```
+so what we do here is just getting id from url path using req obj and after that using mongoose to find this blog with the id that we get after that we rendre it in another page that we created inside views
 
 

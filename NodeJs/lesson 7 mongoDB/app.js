@@ -47,6 +47,16 @@ app.get('/blogs/create', (req, res) => {
   res.render('create', { title: 'Create a new blog' });
 });
 
+// one single blog
+app.get('/blogs/:id', (req, res) => {
+  const id = req.params.id
+  Blog.findById(id)
+    .then((result) =>
+      res.render('blog', { title: 'MyBlog', blog: result })
+    )
+    .catch((err) => console.log(err))
+})
+
 //post data to db
 app.post('/blogs', (req, res) => {
   // console.log("---------------------------------------------")
