@@ -57,7 +57,7 @@ app.get('/blogs/:id', (req, res) => {
     .catch((err) => console.log(err))
 })
 
-//post data to db
+//post sdata to db
 app.post('/blogs', (req, res) => {
   // console.log("---------------------------------------------")
   // console.log(req)
@@ -69,6 +69,13 @@ app.post('/blogs', (req, res) => {
       res.redirect('/blogs')
     })
     .catch((err) => console.log("error => ", err))
+})
+// delete request
+app.delete("/blogs/:id", (req, res) => {
+  const id = req.params.id
+  Blog.findByIdAndDelete(id)
+    .then((result) => res.json({ redirect: "/blogs" }))
+    .catch((err) => console.log(err))
 })
 
 // 404 page

@@ -178,4 +178,7 @@ app.get('/blogs/:id', (req, res) => {
 ```
 so what we do here is just getting id from url path using req obj and after that using mongoose to find this blog with the id that we get after that we rendre it in another page that we created inside views
 
+### Delete
+add delete to your page and make readme for it
+
 

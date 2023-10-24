@@ -14,9 +14,24 @@
                 <p class="body">
                     <%= blog.body %>
                 </p>
-
+                <button class="delete" data-doc="<%= blog._id %>">Delete</button>
             </div>
             <%- include("./partials/footer.ejs") %>
+
+                <script>
+                    const deleteBtn = document.querySelector(".delete")
+                    deleteBtn.addEventListener('click', (e) => {
+                        const id = e.target.dataset.doc
+                        const deleteRequestPath = '/blogs/' + id
+                        fetch(deleteRequestPath, {
+                            method: "DELETE"
+                        })
+                            .then((result) => result.json())
+                            .then((result) => window.location = result.redirect)
+                            .catch((err) => console.log(err))
+
+                    })
+                </script>
     </body>
 
 </html>
