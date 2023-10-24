@@ -179,6 +179,39 @@ app.get('/blogs/:id', (req, res) => {
 so what we do here is just getting id from url path using req obj and after that using mongoose to find this blog with the id that we get after that we rendre it in another page that we created inside views
 
 ### Delete
-add delete to your page and make readme for it
+
+=> every blog have his own delete button
+```html
+<button class="delete" data-doc="<%= blog._id %>">Delete</button>
+```
+- this button in our blog details page that should remove this blog on click on it 
+
+
+=> a script function that will work on Browser
+```js
+const deleteBtn = document.querySelector(".delete")
+deleteBtn.addEventListener('click', (e) => {
+    const id = e.target.dataset.doc
+    const deleteRequestPath = '/blogs/' + id
+    fetch(deleteRequestPath, {
+        method: "DELETE"
+    })
+        .then((result) => result.json())
+        .then((result) => window.location = result.redirect)
+        .catch((err) => console.log(err))
+})
+```
+- we create here a script in our page that will send a request to the server when click on the button delete, we using fetch to do that and after that shold return a json obj that we will convert it using `result.json()` to obj JS and inside it we found a path that we get it from server and we will just redirect user to it after deleting blog done using `window.location`. 
+
+=> get the delete request on URL /blogs/:id
+```js
+app.delete("/blogs/:id", (req, res) => {
+  const id = req.params.id
+  Blog.findByIdAndDelete(id)
+    .then((result) => res.json({ redirect: "/blogs" }))
+    .catch((err) => console.log(err))
+})
+```
+- we create here a delete request on path `/blogs/:id` that will get id from URL using `req.params.id` and after that using `mongoose` function `findByIdAndDelete` on blog Schema that will search for a blog in DB blogs with ID  and delte it, after delete has success we send a response that is a json obj contain a redirect key and URL value.
 
 
