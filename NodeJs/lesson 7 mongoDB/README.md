@@ -248,5 +248,20 @@ app.use('/blogs', blogRouter)
 - so that's working greate and we done but i want to add a note
 - if we add `/blogs` in our blog routes middlware that mean it's will look for just urls that start with `/blogs`. and it's will add in first of every url inside our blogRouter the `/blogs` so we don't need to write it in each url request 
 
+## MVC Basics
 
+- Stands for Model, view , Controller
+- MVC is way of structuring our code & files
+- Keeps code more modular, reusable & easier to read
 
+### Model & view
+- **Model**we use model in our app before for intract with Database like when we use Blog model
+-**View** same thing with view we use ejs to create dynamique template view that user will see.
+
+### Controllers
+
+Model ------- Controller ------- View
+
+the controller is the thing that make contact line between the model and view
+
+the idea of controller is to split the function that we use inside our requests and reference it the module to make it reusable and easier to read and edit

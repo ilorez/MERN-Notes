@@ -68,7 +68,7 @@ method(){
 
 ## Part 2 - Class Static Properties And Methods
 
-- Static Properties: A static property is a property that is created for the class itself and is not accessible from instances of the class. For example:
+- **Static Properties**: A static property is a property that is created for the class itself and is not accessible from instances of the class. For example:
 
 ```js
 class User {
