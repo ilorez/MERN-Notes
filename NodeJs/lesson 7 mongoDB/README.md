@@ -214,4 +214,39 @@ app.delete("/blogs/:id", (req, res) => {
 ```
 - we create here a delete request on path `/blogs/:id` that will get id from URL using `req.params.id` and after that using `mongoose` function `findByIdAndDelete` on blog Schema that will search for a blog in DB blogs with ID  and delte it, after delete has success we send a response that is a json obj contain a redirect key and URL value.
 
+## Express Router
+
+here we will create a router for urls that start with `/blogs`.
+
+let going one by one:
+
+- first lets create a routes > blogRoute.js file and move to it all URLs request start with `/blogs` that founded inside our app
+- after that we need to import in the top, the express route module
+
+```js
+const express = require('express');
+const router = express.Router();
+```
+
+- inside express we have the `Router()` method that we will use to create router
+- so in plase of using `app.get` or `app.post` ... we will use `router.get`,`router.post` ... 
+- Emmm ... what we did just now, we created here a Router module that we can export it and using it in our app
+
+=> in blogRouter.js
+```js
+module.exports = router;
+```
+=> in app.js
+```js
+const blogRouter = require("./routes/blogRoute")
+.
+.
+.
+// blog routes
+app.use('/blogs', blogRouter)
+```
+- so that's working greate and we done but i want to add a note
+- if we add `/blogs` in our blog routes middlware that mean it's will look for just urls that start with `/blogs`. and it's will add in first of every url inside our blogRouter the `/blogs` so we don't need to write it in each url request 
+
+
 
