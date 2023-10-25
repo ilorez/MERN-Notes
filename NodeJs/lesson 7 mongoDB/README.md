@@ -255,13 +255,37 @@ app.use('/blogs', blogRouter)
 - Keeps code more modular, reusable & easier to read
 
 ### Model & view
-- **Model**we use model in our app before for intract with Database like when we use Blog model
--**View** same thing with view we use ejs to create dynamique template view that user will see.
+- **Model** : we use model in our app before for intract with Database like when we use Blog model
+- **View** : same thing with view we use ejs to create dynamique template view that user will see.
 
 ### Controllers
+---
+  
+  [Model] ------- [Controller] ------- [View]
 
-Model ------- Controller ------- View
-
+---
 the controller is the thing that make contact line between the model and view
 
-the idea of controller is to split the function that we use inside our requests and reference it the module to make it reusable and easier to read and edit
+the idea of controller is to split the function that we use inside our requests and reference it tp the module to make it reusable and easier to read and edit
+
+=> so the story is:
+- create a folder controllers in the same place that the moduls and views in it (MVC)
+- this folder will contain our app parts controller, what that's mean ?
+- every page has one or many part ,for our page have a blog part that contain (create,delete,get,post...) blog 
+- so because it's have many function the controller say leave me make your app more orderd, 
+- so you need to create a folder for our example blogController.js and put inside it every blog function
+- after that import it from your blogRoute and call the functions in there place
+- that all, it's doesn't change any thing in your page every thing work same but you can't imagine how that help many sides
+
+**Note**: ofcours you can look inside `controllers > blogController.js` for more understanding, after that look to file `routes > blogRoute.js` to see how we creat reference for our functions.
+
+## structur Views
+
+- we have in our page a blog that can create it delete it ... and for every option of thoose we need to create view for it so for creating a blog there is create.ejs view.
+
+- imagin now if we have a another resource like user that we can create user delete user ... just like blog so we want to create a create.ejs view and that will make a probleme in our views so we need name it createUser.ejs, but we have another way
+
+- create folder blog that contain blog views & user contain user views
+
+
+
