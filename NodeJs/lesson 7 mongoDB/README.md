@@ -1,3 +1,27 @@
+
+
+
+## Table of Content
+- [MongoDb](#mongodb) 
+- [Connect to db](#connect-to-db) 
+- [Create Shema ](#create-shema) 
+  - [Step one](#step-one) 
+  - [Step two](#step-two) 
+- [Connection with DB](#connection-with-db) 
+  - [Create new Blog](#create-new-blog) 
+  - [Find blogs](#find-blogs) 
+  - [Get one single blog by Id](#get-one-single-blog-by-id) 
+- [Mongoose Request types](#mongoose-request-types) 
+  - [GET](#get) 
+  - [POST](#post) 
+  - [Route Parameters](#route-parameters) 
+  - [Delete](#delete) 
+- [Express Router](#express-router) 
+- [MVC Basics](#mvc-basics) 
+  - [Model & view](#model--view) 
+  - [Controllers](#controllers) 
+- [Structur Views](#structur-views) 
+ 
 ## MongoDb
 
 after create your databse and tables in mongoDB copy the database conecte link that look like this
@@ -5,7 +29,7 @@ after create your databse and tables in mongoDB copy the database conecte link t
 - 'mongodb+srv://<user>:<password>@<database>.gm9xflf.mongodb.net/<file>?retryWrites=true&w=majority'
 
 we can use this link to connect to our DB and read write update or delete the the data from it.
-## connect to db
+## Connect to db
 ```js
 // acces to database mongodb
 const dbc = 'mongodb+srv://zozo:159159@ilorez.gm9xflf.mongodb.net/learn?retryWrites=true&w=majority'
@@ -20,7 +44,7 @@ so what we did here:
 - after the connecting has done we told app to list to port 3000 
 - if you find a error in connection log on the console
 
-## create Shema 
+## Create Shema 
 ```js
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema
@@ -44,7 +68,7 @@ const Blog = mongoose.model("Blog", blogSchema)
 
 module.exports = Blog;
 ```
-### step one
+### Step one
 - What is Schema and for what:
     - schema is the thing that will definde the structer of the document that we will stor it inside the collections
     - so if you look to again you will find that we use `new Schema` beacause it's actualy a constractor
@@ -52,7 +76,7 @@ module.exports = Blog;
     - we set another argument it's opetion one that add the timestps to our document (created date, updated date ...)
     - after that we need to understand next step:
 
-### step two
+### Step two
 ```js
 const Blog = mongoose.model("Blog", blogSchema)
 ```
@@ -113,7 +137,7 @@ app.get('/single-blog', (req, res) => {
     .catch((err) => console.log(err))
 })
 ```
-## mongoose Request types
+## Mongoose Request types
 
 - **GET**: request to get a resource
 - **POST**: request to create new data (e.g. a new blog)
@@ -279,13 +303,16 @@ the idea of controller is to split the function that we use inside our requests 
 
 **Note**: ofcours you can look inside `controllers > blogController.js` for more understanding, after that look to file `routes > blogRoute.js` to see how we creat reference for our functions.
 
-## structur Views
+## Structur Views
 
 - we have in our page a blog that can create it delete it ... and for every option of thoose we need to create view for it so for creating a blog there is create.ejs view.
 
 - imagin now if we have a another resource like user that we can create user delete user ... just like blog so we want to create a create.ejs view and that will make a probleme in our views so we need name it createUser.ejs, but we have another way
 
 - create folder blog that contain blog views & user contain user views
+
+
+Happy Coding!
 
 
 
