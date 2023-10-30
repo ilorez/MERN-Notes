@@ -1,5 +1,18 @@
 # Date and Time
 
+
+## Table of Content
+- [Contents](#contents) 
+- [Part 1 - Introduction](#part-1---introduction) 
+- [Part 2 - Get Date Methods](#part-2---get-date-methods) 
+    - [get date using date methods](#get-date-using-date-methods) 
+- [Part 3 - Set Date Methods](#part-3---set-date-methods) 
+    - [set time using date methods](#set-time-using-date-methods) 
+    - [Note: If you find that hours it's not 0 that because your time zone(+/-) (1-12) hour according to space between you and Greenwich Mean Time (GMT)](#note-if-you-find-that-hours-it's-not-0-that-because-your-time-zone(-)-(1-12)-hour-according-to-space-between-you-and-greenwich-mean-time-(gmt)) 
+- [Part 4 - Fromatting Date](#part-4---fromatting-date) 
+- [Part 5 - Tracking Operations Time](#part-5---tracking-operations-time) 
+    - [Note: take look inside Part 5 file](#note-take-look-inside-part-5-file) 
+ 
 ## Contents
 
 - [Part 1 - Introduction](#part-1---introduction)

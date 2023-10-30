@@ -4,13 +4,18 @@ Object-Oriented Programming (OOP) is a programming paradigm that organizes code 
 
 
 
+
 ## Table of Content
 - [Part 1 - Create , Update Properties/Methodes And Built In Constructors](#part-1---create--update-propertiesmethodes-and-built-in-constructors) 
+  - [simple class obj](#simple-class-obj) 
+  - [create classe](#create-classe) 
 - [Part 2 - Class Static Properties And Methods](#part-2---class-static-properties-and-methods) 
 - [Part 3 - Inheritance](#part-3---inheritance) 
 - [Part 4 - Encapsulation](#part-4---encapsulation) 
 - [Part 5 - Prototype](#part-5---prototype) 
 - [Part 6 - Object Meta Data And Descriptor](#part-6---object-meta-data-and-descriptor) 
+  - [Part A](#part-a) 
+  - [Part B](#part-b) 
  
 ## Part 1 - Create , Update Properties/Methodes And Built In Constructors
 
