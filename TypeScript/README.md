@@ -1,7 +1,7 @@
 # TypeScript
 
-
 ## Table of Content
+
 - [TypeScript](#typescript)
   - [Table of Content](#table-of-content)
   - [Setup](#setup)
@@ -31,7 +31,15 @@
     - [Interface Method And Parameters](#interface-method-and-parameters)
     - [ReOpen The Interface And Use Cases](#reopen-the-interface-and-use-cases)
     - [Extending Interfaces](#extending-interfaces)
- 
+    - [Interface vs Type Alias](#interface-vs-type-alias)
+    - [HTMLElement Interface](#htmlelement-interface)
+  - [Class](#class)
+    - [Type Annotations With Class](#type-annotations-with-class)
+    - [Data Access Modifiers \& Parameters Properties](#data-access-modifiers--parameters-properties)
+    - [Get And Set Accessors](#get-and-set-accessors)
+    - [Static Members](#static-members)
+    - [Implement Interface](#implement-interface)
+
 ## Setup
 
 ### create config file in you dir
@@ -115,13 +123,13 @@ Type Annotations || Signature
 
 ```ts
 
-let theName = "Elzero";
+let theName = "najdaoui";
 let theAge: number = 40;
 let hire: boolean = true;
-let all: any = "Elzero Web School";
+let all: any = "Hello World";
 let allVars; // Any
 
-theName = "Osama";
+theName = "zobair";
 all = 100;
 ```
 
@@ -261,13 +269,13 @@ console.log(addWithArrow(10, 20));
 
 ```ts
 type st = string;
-let theName: st = "Elzero";
-theName = "Osama";
+let theName: st = "Ilorez";
+theName = "najdaoui";
 
 type standnum = string | number;
 let all: standnum = 10;
 all = 100;
-all = "Osama";
+all = "najdaoui";
 ```
 
 ### Advanced Type Alias
@@ -541,8 +549,8 @@ interface User {
 
 let user: User = {
   id: 100,
-  username: "Elzero",
-  country: "Egypt",
+  username: "Ilorez",
+  country: "Morocco",
   sayHello() {
     return `Hello ${this.username}`;
   },
@@ -606,11 +614,194 @@ interface Admin extends User,Moderator {
 
 let user: Admin = {
   id: 100,
-  username: "Elzero",
-  country: "Egypt",
+  username: "Ilorez",
+  country: "Morocco",
   role: "Mod",
   protect: true
 }
 
 console.log(user.id);
 ```
+
+### Interface vs Type Alias
+
+- it's not like the Interface we can't open it and add some info to it.
+
+```ts
+type Settings {
+  readonly theme: boolean;
+  font: string;
+  sidebar: boolean;
+  external: boolean;
+}
+
+let userSettings: Settings = {
+  theme: true,
+  font: "Open Sans",
+  sidebar: false,
+  external: true
+}
+
+```
+
+### HTMLElement Interface
+
+```ts
+let el = document.getElementById("id") as HTMLElement;
+```
+
+ctrl + click on VSCode fore open HTMLElement Interface
+
+## Class
+
+### Type Annotations With Class
+
+```ts
+class User {
+  u: string;
+  s: number;
+  msg: () => string;
+  constructor(username: string, salary: number) {
+    this.u = username;
+    this.s = salary;
+    this.msg = function () {
+      return `Hello ${this.u} Your Salary Is ${this.s}`;
+    }
+  }
+  sayMsg() {
+    return `Hello ${this.u} Your Salary Is ${this.s}`;
+  }
+}
+
+let userOne = new User("Ilorez", 6000);
+
+console.log(userOne.u);
+console.log(userOne.s);
+console.log(userOne.msg());
+console.log(userOne.sayMsg());
+```
+
+### Data Access Modifiers & Parameters Properties
+
+- Public
+  - All Members Of A Class In TypeScript Are Public
+  - All Public Members Can Be Accessed Anywhere Without Any Restrictions
+- Private
+  - Members Are Visible Only To That Class And Are Not Accessible Outside The Class
+- Protected
+  - Same Like Private But Can Be Accessed Using The Deriving Class
+
+- TypeScript Is A Layer On Top Of JavaScript
+- It Should Remove All Annotations And Although Access Modifiers "Private For Example"
+
+```ts
+class User {
+  msg: () => string;
+  constructor(private username: string, protected salary: number,public readonly address: string) {
+    this.msg = function () {
+      return `Hello ${this.username} Your Salary Is ${this.salary}`;
+    }
+  }
+  sayMsg() {
+    return `Hello ${this.username} Your Salary Is ${this.salary}`;
+  }
+}
+
+let userOne = new User("Ilorez", 6000, "tasseltatne");
+
+// console.log(userOne.username);
+// console.log(userOne.salary);
+console.log(userOne.msg());
+console.log(userOne.sayMsg());
+```
+
+### Get And Set Accessors
+
+```ts
+class User {
+  public get username(): string {
+    return this._username;
+  }
+  public set username(value: string) {
+    this._username = value;
+  }
+  msg: () => string;
+  constructor(private _username: string, public salary: number, public readonly address: string) {
+    this.msg = function () {
+      return `Hello ${this._username} Your Salary Is ${this.salary}`;
+    }
+  }
+  sayMsg() {
+    return `Hello ${this._username} Your Salary Is ${this.salary}`;
+  }
+  // get username() : string {
+  //   return this._username;
+  // }
+  // set username(value: string) {
+  //   this._username = value;
+  // }
+}
+
+let userOne = new User("Ilorez", 6000, "tasseltatne");
+
+console.log(userOne.username);
+userOne.username = "Ahmed";
+console.log(userOne.username);
+console.log(userOne.salary);
+console.log(userOne.msg());
+console.log(userOne.sayMsg());
+```
+
+### Static Members
+
+- Don't Use "name, length, call"
+
+```ts
+class User {
+  private static created: number = 0;
+  static getCount() : void {
+    console.log(`${this.created} Objects Created`);
+  }
+  constructor(public username: string) {
+    User.created++;
+  }
+}
+
+let u1 = new User("ilorez");
+let u2 = new User("Web");
+let u3 = new User("School");
+// console.log(User.created);
+User.getCount();
+```
+
+the idea here to understand the getters and setters and for that you need to use a language that complety work with privets and protects propertes --encapsilation and js doesn't,  getters and setters is use on to change or read a privet property.
+
+### Implement Interface
+
+```ts
+interface Settings {
+  theme: boolean;
+  font: string;
+  save(): void;
+}
+
+class User implements Settings {
+  constructor(public username: string, public theme: boolean, public font: string) {}
+  save(): void {
+    console.log(`Saved`);
+  }
+  update(): void {
+    console.log(`Updated`);
+  }
+}
+
+let userOne = new User("Ilorez", true, "Open Sans");
+
+console.log(userOne.username);
+console.log(userOne.font);
+
+userOne.save();
+userOne.update();
+```
+
+the idea here to make a structure to your class
