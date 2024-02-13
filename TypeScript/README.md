@@ -39,6 +39,11 @@
     - [Get And Set Accessors](#get-and-set-accessors)
     - [Static Members](#static-members)
     - [Implement Interface](#implement-interface)
+    - [Abstract Classes And Members](#abstract-classes-and-members)
+    - [Polymorphism \& Method Override](#polymorphism--method-override)
+  - [Generics](#generics)
+    - [Generics Multiple Types](#generics-multiple-types)
+    - [Classes](#classes)
 
 ## Setup
 
@@ -805,3 +810,174 @@ userOne.update();
 ```
 
 the idea here to make a structure to your class
+
+### Abstract Classes And Members
+
+- We Cannot Create An Instance Of An Abstract Class
+
+```ts
+abstract class Food {
+  constructor(public title: string) {}
+  abstract getCookingTime() : void;
+}
+
+class Pizza extends Food {
+  constructor(title: string, public price: number) {
+    super(title);
+  }
+  getCookingTime() : void {
+    console.log(`Cooking Time For Pizza Is 1 Hour`);
+  }
+}
+
+class Burger extends Food {
+  constructor(title: string, public price: number) {
+    super(title);
+  }
+  getCookingTime() : void {
+    console.log(`Cooking Time For Burger Is Half Hour`);
+  }
+}
+
+let pizzaOne = new Pizza("Awesome Pizza", 100);
+
+console.log(pizzaOne.title);
+console.log(pizzaOne.price);
+pizzaOne.getCookingTime();
+```
+
+### Polymorphism & Method Override
+
+- Polymorphism
+  - Classes Have The Same Methods But Different Implementations
+- Method Override
+  - Allowing Child Class To Provide Implementation Of A Method In Parent Class
+  - A Method In Child Class Must Have Same Name As Parent Class
+
+  - noImplicitOverride
+
+```ts
+class Player {
+  constructor(public name: string) {}
+  attack() : void {
+    console.log("Attacking Now");
+  }
+}
+
+class Amazon extends Player {
+  constructor(name: string, public spears: number) {
+    super(name);
+  }
+  override attack(): void {
+    // super.attack();
+    console.log("Attacking With Spear");
+    this.spears -= 1;
+  }
+}
+
+class Barbarian extends Player {
+  constructor(name: string, public axeDurability: number) {
+    super(name);
+  }
+  override attack(): void {
+    // super.attack();
+    console.log("Attacking With Axe");
+    this.axeDurability -= 1;
+  }
+}
+
+let barOne = new Barbarian("Ilorez", 100);
+
+console.log(barOne.name);
+barOne.attack();
+console.log(barOne.axeDurability);
+```
+
+## Generics
+
+- Help Write A Reusable Code
+- Allow To Pass Type As A Parameter To Another Type
+- You Will Be Able To Deal With Multiple Types Without Using ": Any Type"
+- We Can Create:
+  - Generic Classes
+  - Generic Functions
+  - Generic Methods
+  - Generic Interfaces
+
+```ts
+function returnNumber(val: number) : number {
+  return val;
+}
+function returnString(val: string) : string {
+  return val;
+}
+function returnBoolean(val: boolean) : boolean {
+  return val;
+}
+
+console.log(returnNumber(100));
+console.log(returnString("Ilorez"));
+console.log(returnBoolean(true));
+
+function returnType<T>(val: T) : T {
+  return val;
+}
+
+console.log(returnType<number>(100));
+console.log(returnType<string>("Ilorez"));
+console.log(returnType<boolean>(true));
+console.log(returnType<number[]>([1, 2, 3, 4]));
+```
+
+### Generics Multiple Types
+
+- Arrow Function
+- Multiple Types
+- Discussion
+
+```ts
+function returnType<T>(val: T): T {
+  return val;
+}
+
+console.log(returnType<number>(100));
+console.log(returnType<string>("Ilorez"));
+
+const returnTypeArrowSyntax = <T>(val: T): T => val;
+
+console.log(returnTypeArrowSyntax<number>(100));
+console.log(returnTypeArrowSyntax<string>("Ilorez"));
+
+function testType<T>(val: T): string {
+  return `The Value Is ${val} And Type Is ${typeof val}`;
+}
+
+console.log(testType<number>(100));
+console.log(testType<string>("Ilorez"));
+
+function multipleTypes<T, S>(valueOne: T, valueTwo: S): string {
+  return `The First Value Is ${valueOne} And Second Value ${valueTwo}`;
+}
+
+console.log(multipleTypes<string, number>("Najdaoui", 100));
+console.log(multipleTypes<string, boolean>("Ilorez", true));
+```
+
+### Classes
+
+```ts
+class User<T = string> {
+  constructor(public value: T) {}
+  show(msg: T) : void {
+    console.log(`${msg} - ${this.value}`);
+  }
+}
+
+let userOne = new User<string>("Ilorez");
+console.log(userOne.value);
+userOne.show("Message");
+
+let userTwo = new User<number | string>(100);
+console.log(userTwo.value)
+userTwo.show("Message");
+```

@@ -138,48 +138,48 @@
 // console.log(tester.title); // Property 'title' does not exist on type 'Show'
 
 // ----------------
-interface Play {
-  id: number;
-  title: string;
-  level: number | string;
-  logIn(): void;
-  logOut(msg: string): void;
-}
+// interface Play {
+//   id: number;
+//   title: string;
+//   level: number | string;
+//   logIn(): void;
+//   logOut(msg: string): void;
+// }
 
-// Create Your Class Here
-class Player implements Play {
-  public get level(): string | number {
-    return this._level;
-  }
-  public set level(value: string | number) {
-    this._level = value;
-  }
-  public get title(): string {
-    return this._title;
-  }
-  public set title(value: string) {
-    this._title = value;
-  }
-  public get id(): number {
-    return this._id;
-  }
-  public set id(value: number) {
-    this._id = value;
-  }
-  constructor(private _id: number,private _title: string,private _level: string | number){
-  }
-  logIn():void {
-    console.log('Logged In')
-  }
-  logOut(msg:string):void{
-    console.log(`logged Out, ${msg}`)
-  }
-}
+// // Create Your Class Here
+// class Player implements Play {
+//   public get level(): string | number {
+//     return this._level;
+//   }
+//   public set level(value: string | number) {
+//     this._level = value;
+//   }
+//   public get title(): string {
+//     return this._title;
+//   }
+//   public set title(value: string) {
+//     this._title = value;
+//   }
+//   public get id(): number {
+//     return this._id;
+//   }
+//   public set id(value: number) {
+//     this._id = value;
+//   }
+//   constructor(private _id: number,private _title: string,private _level: string | number){
+//   }
+//   logIn():void {
+//     console.log('Logged In')
+//   }
+//   logOut(msg:string):void{
+//     console.log(`logged Out, ${msg}`)
+//   }
+// }
 
-let player1 = new Player(100, "Elzero", 95);
+// let player1 = new Player(100, "Elzero", 95);
 
-console.log(player1.id); // 100
-console.log(player1.title); // "Elzero"
-console.log(player1.level); // 95
-player1.logIn(); // Logged In
-player1.logOut("Good Bye"); // Logged Out, Good Bye
+// console.log(player1.id); // 100
+// console.log(player1.title); // "Elzero"
+// console.log(player1.level); // 95
+// player1.logIn(); // Logged In
+// player1.logOut("Good Bye"); // Logged Out, Good Bye
