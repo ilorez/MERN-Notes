@@ -44,6 +44,8 @@
   - [Generics](#generics)
     - [Generics Multiple Types](#generics-multiple-types)
     - [Classes](#classes)
+    - [Classes And Interfaces](#classes-and-interfaces)
+  - [cya](#cya)
 
 ## Setup
 
@@ -124,7 +126,7 @@ Type Annotations || Signature
 - Objects, etc.
 - Why We Use It ?
 - Is It Mandatory ?
-- What Happen If We Didnt Use It ?
+- What Happen If We Didn't Use It ?
 
 ```ts
 
@@ -214,7 +216,7 @@ console.log(showDetails("Ilorez", 20, 5000));
 Function
 
 - Optional and Default Parameters
-- In JavaScript, Every Parameter Is Optional => "undefined" If You Didnt Use It
+- In JavaScript, Every Parameter Is Optional => "undefined" If You Didn't Use It
 - "?" Optional Parameter
 
 ```ts
@@ -380,7 +382,7 @@ const fail = (msg: string) => {
 function alwaysLog(name: string) : never {
   while(true) {
     console.log(name);
-  } // beacause it's infiny loop it's will never return any return because the funtion will never be complete
+  } // beacause it's infinity loop it's will never return any return because the funtion will never be complete
 }
 
 alwaysLog("Ilorez");
@@ -453,7 +455,7 @@ if (lvl === "Easy") {
 
 ### Type Assertions
 
-- Sometime Compiler Doesnt Know The Information We Do
+- Sometime Compiler Doesn't Know The Information We Do
 
 ```ts
 // let myImg = document.getElementById("my-img") as HTMLImageElement;
@@ -779,7 +781,7 @@ let u3 = new User("School");
 User.getCount();
 ```
 
-the idea here to understand the getters and setters and for that you need to use a language that complety work with privets and protects propertes --encapsilation and js doesn't,  getters and setters is use on to change or read a privet property.
+the idea here to understand the getters and setters and for that you need to use a language that complety work with privets and protects properties --encapsulation and js doesn't,  getters and setters is use on to change or read a privet property.
 
 ### Implement Interface
 
@@ -981,3 +983,42 @@ let userTwo = new User<number | string>(100);
 console.log(userTwo.value)
 userTwo.show("Message");
 ```
+
+### Classes And Interfaces
+
+```ts
+interface Book {
+  itemType: string;
+  title: string;
+  isbn: number;
+}
+
+interface Game {
+  itemType: string;
+  title: string;
+  style: string;
+  price: number;
+}
+
+class Collection<T> {
+  public data: T[] = [];
+  add(item: T) : void {
+    this.data.push(item);
+  }
+}
+
+let itemOne = new Collection<Book>();
+itemOne.add({ itemType: "Book", title: "Atomic Habits", isbn: 150510 });
+itemOne.add({ itemType: "Book", title: "Follow Your Heart", isbn: 650650 });
+console.log(itemOne);
+
+let itemTwo = new Collection<Game>();
+itemTwo.add({ itemType: "Game", title: "Uncharted", style: "Action", price: 150 });
+console.log(itemTwo);
+```
+
+## cya
+
+this is no all with the TypeScript there is other topics you need to learn but for know i think you have got the basics and good view for TypeScript.
+
+Happy coding!
