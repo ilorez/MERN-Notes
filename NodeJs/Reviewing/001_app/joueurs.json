@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "idEquipe":"team2",
+        "nom": "teamName_1",
+        "numero": "Numero_1",
+        "post": "post top right"
+    },
+    {
+        "id": 2,
+        "idEquipe":"team1",
+        "nom": "teamName_2",
+        "numero": "Numero_2",
+        "post": "post top left"
+    }
+]
